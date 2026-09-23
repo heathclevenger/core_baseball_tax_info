@@ -39,7 +39,7 @@ export async function exportWorkbook(report:Report){
    ['State / province','Country','Completed games','Game dates'],
    ...summary.regions.map(region=>[region.state,region.country,region.games,region.days]),
   ]);
-  ws.getRange('A1:A3').font={bold:true,color:{argb:'FF3E5365'}};
+  for(let row=1;row<=3;row++)ws.getCell(`A${row}`).font={bold:true,color:{argb:'FF3E5365'}};
   ws.getRow(5).font={bold:true,color:{argb:'FFFFFFFF'}};
   ws.getRow(5).fill={type:'pattern',pattern:'solid',fgColor:{argb:'FF3E5365'}};
   ws.views=[{state:'frozen',ySplit:5}];
