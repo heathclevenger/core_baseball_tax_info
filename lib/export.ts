@@ -46,9 +46,10 @@ export async function exportWorkbook(report:Report){
   ws.autoFilter={from:{row:5,column:1},to:{row:Math.max(5,ws.rowCount),column:4}};
   ws.columns=[{width:24},{width:18},{width:18},{width:14}];
 
-  addSheet('Location periods',['Start date','End date','City','State / province','Country','Team','Number of games','Roster status'],summary.periods.map(period=>[
+  const locationSheet=addSheet('Location periods',['Start date','End date','City','State / province','Country','Team','Number of games','Roster status'],summary.periods.map(period=>[
    period.start,period.end,period.city,period.state,period.country,period.team,period.games,simpleStatus(period.rosterStatus)
   ]));
+  summary.periods.forEach((period,index)=>{if(simpleStatus(period.rosterStatus)==='Manual review')locationSheet.getCell(index+2,8).font={color:{argb:'FFB42318'},bold:true};});
   addSheet('Transactions',['Effective date','Posted date','Description','Transaction ID'],report.transactions.map(transaction=>[
    transaction.effectiveDate??transaction.date,transaction.date,transaction.description,transaction.id
   ]));
