@@ -54,6 +54,9 @@ export async function exportWorkbook(report:Report){
    transaction.effectiveDate??transaction.date,transaction.date,transaction.description,transaction.id
   ]));
  }
+ addSheet('Spring training',['Date','Team','Opponent','Ballpark','City','State / province','Country','Home / away'],(report.springGames??[]).map(game=>[
+  game.date,game.team,game.opponent,game.venue,game.city,game.state,game.country,game.homeAway
+ ]));
 
  const buffer=await workbook.xlsx.writeBuffer();
  const url=URL.createObjectURL(new Blob([buffer as ArrayBuffer],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}));

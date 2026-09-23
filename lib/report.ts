@@ -4,7 +4,7 @@ export type Game = {id:number;date:string;team:string;opponent:string;level:stri
 export type Period = {start:string;end:string;city:string;state:string;country:string;team:string;games:number;days:number;rosterStatus:string};
 export type Injury = {teamId:number;team:string;start:string;end:string;status:string;open:boolean};
 export type Transaction = {id:number;date:string;effectiveDate?:string;description:string;toTeam?:{id:number;name:string};fromTeam?:{id:number;name:string}};
-export type Report = {teamSchedule?:boolean;games:Game[];profileUrl?:string;excluded:number;retrievedAt:string;cutoff:string;basis:string;label:string;season:number;workpaper?:{clientReference:string;preparedBy:string;notes:string};sources:string[];warnings:string[];assignments:Assignment[];injuries:Injury[];transactions:Transaction[]};
+export type Report = {teamSchedule?:boolean;games:Game[];springGames:Game[];profileUrl?:string;excluded:number;retrievedAt:string;cutoff:string;basis:string;label:string;season:number;workpaper?:{clientReference:string;preparedBy:string;notes:string};sources:string[];warnings:string[];assignments:Assignment[];injuries:Injury[];transactions:Transaction[]};
 export function summarize(games:Game[]) {
  const periods:Period[]=[];
  for(const g of [...games].sort((a,b)=>a.date.localeCompare(b.date)||a.id-b.id)) {

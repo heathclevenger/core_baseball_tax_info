@@ -46,8 +46,8 @@ main>.intro h1{margin-top:0}
 .metrics>div{background:#f7f4ec;padding:14px}
 .metrics strong{font-size:25px}
 .empty{grid-column:2;grid-row:1 / span 2;min-height:0;height:100%;padding:38px 24px 0}
-.report-card{grid-column:1 / -1;grid-row:3;margin-top:2px}
-.injury-summary{grid-column:1 / -1;grid-row:4}
+.report-card{grid-column:1 / -1;margin-top:2px}
+.injury-summary{grid-column:1 / -1}
 .table-scroll{max-height:620px}
 @media(max-width:950px){.workspace{grid-template-columns:1fr 1fr}.builder{grid-column:1;grid-row:1 / span 2}.report-heading{grid-column:2}.metrics{grid-column:2}.report-card,.injury-summary{grid-column:1 / -1}}
 @media(max-width:700px){.workspace{display:flex}.report-area{display:block}.builder,.report-heading,.metrics,.empty,.report-card,.injury-summary{width:100%;height:auto}.report-heading{border-radius:11px 11px 0 0}.metrics{grid-template-columns:repeat(2,1fr);border-radius:0 0 11px 11px}.report-card{margin-top:18px}}
@@ -61,4 +61,4 @@ main>.intro h1{margin-top:0}
 .sidebar>.brand .brand-name,.sidebar>.brand .brand-o,.sidebar>.brand .brand-subtitle{color:#ca936d}
 .sidebar>.brand .brand-name{font-size:20px}
 .profile-link{display:block;margin-top:8px;color:#925736;font-size:11px;font-weight:600}.manual-review{color:#b42318!important;font-weight:700}.badge.review{background:#fee4e2;color:#b42318}
-.manual-review-panel{grid-column:1/-1;border:1px solid #f0b4ae;background:#fff1f0;color:#b42318;border-radius:8px;padding:13px 16px;display:flex;gap:14px;align-items:center}.manual-review-panel span{font-size:11px}
+.manual-review-panel{grid-column:1/-1;border:1px solid #f0b4ae;background:#fff1f0;color:#b42318;border-radius:8px;padding:13px 16px;font-weight:700}
